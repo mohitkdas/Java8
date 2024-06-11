@@ -1,6 +1,7 @@
 package streaminterviewQA;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -23,8 +24,8 @@ public class LongestString {
 
         // 8. String.join example
         List<String> nos = Arrays.asList("1", "2", "3", "4");
-        String results = String.join("-", nos);
-        System.out.println(results);
+        System.out.println(nos.stream().collect(Collectors.joining("-")));
+        System.out.println(String.join("-", nos));
 
         // 9. Skip and limit method use case example
         IntStream.rangeClosed(1, 10)

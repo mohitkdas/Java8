@@ -1,9 +1,6 @@
 package streaminterviewQA;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -35,5 +32,27 @@ public class CountOccurrence {
             }
         }
         System.out.println(map2);
+
+        String[] str2 = {"java", "java", "is", "a", "programming", "language"};
+
+        Map<String, Long> map3 = Arrays.stream(str2).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        System.out.println(map3);
+
+        Set<String> set = new HashSet<>();
+        Set<String> duplicate = Arrays.stream(str2).filter(x -> !set.add(x)).collect(Collectors.toSet());
+
+        List<String> frequency = Arrays.stream(str2).filter(x -> Collections.frequency(Arrays.asList(str2), x) == 1).collect(Collectors.toList());
+
+        List<String> list =  Arrays.stream(str2).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet()
+                .stream()
+                .filter(x -> x.getValue() > 1)
+                .map(Map.Entry::getKey).collect(Collectors.toList());
+
+        System.out.println(list);
+
+        System.out.println(set);
+        System.out.println(duplicate);
+        System.out.println(frequency);
     }
 }

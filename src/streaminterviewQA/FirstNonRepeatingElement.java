@@ -1,7 +1,9 @@
 package streaminterviewQA;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -17,6 +19,10 @@ public class FirstNonRepeatingElement {
                 .filter(x -> x.getValue() == 1)
                 .findFirst().get().getKey();
         System.out.println(key);
+
+        List<String> strList = Arrays.asList(str.split(""));
+
+        strList.stream().filter(x -> Collections.frequency(strList, x) == 1).findFirst().ifPresent(System.out::println);
 
        // first repeating character
         String repeat = Arrays.stream(str.split(""))

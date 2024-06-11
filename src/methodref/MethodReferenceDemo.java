@@ -35,7 +35,7 @@ public class MethodReferenceDemo {
         System.out.println(biFunctionLambda.apply(10, 20));
 
         // method reference
-        BiFunction<Integer, Integer, Integer> biFunction= MethodReferenceDemo::addition;
+        BiFunction<Integer, Integer, Integer> biFunction = MethodReferenceDemo::addition;
         System.out.println(biFunction.apply(10, 40));
 
         // 2. Method Reference to an instance method of an object

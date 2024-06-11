@@ -8,7 +8,7 @@ public class ParenthesisMatch {
         map.put('(', ')');
         map.put('[', ']');
         map.put('{', '}');
-        String s = "(){}(";
+        String s = "(){}()";
         Stack<Character> chr = new Stack<Character>();
         for (int i = 0; i < s.length(); i++) {
             if (chr.isEmpty()) {
