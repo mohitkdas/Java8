@@ -2,8 +2,6 @@ package coding;
 
 import java.util.*;
 import java.util.function.BiConsumer;
-import java.util.function.Function;
-import java.util.function.ToIntFunction;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -31,7 +29,6 @@ public class Main {
         //difference between limit and skip
         System.out.println("Limit");
         list.stream().limit(7).forEach(System.out::println);
-        List<Integer> list1 = list.stream().limit(7).toList();
         System.out.println("Skip");
         list.stream().skip(7).forEach(System.out::println);
 
